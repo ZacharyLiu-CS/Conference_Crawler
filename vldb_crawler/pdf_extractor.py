@@ -8,6 +8,8 @@ from pdfminer.pdfparser import PDFParser
 import re
 import os
 
+from pip import main
+
 def extractFromPdf(pdf_path:str):
     output_string = StringIO()
     with open(pdf_path, 'rb') as in_file:
@@ -51,6 +53,7 @@ def getProjectNameAndUrl(paper_url):
         return ("","")
     return (extractProjectName(project_url),project_url)
 
-paper_url = "http://vldb.org/pvldb/vol14/p1311-suzuki.pdf"
-paper_url1 = "http://vldb.org/pvldb/vol14/p1-marcus.pdf"
-print(getProjectNameAndUrl(paper_url1))
+if '__name__' == '__main__':
+    paper_url = "http://vldb.org/pvldb/vol14/p1311-suzuki.pdf"
+    paper_url1 = "http://vldb.org/pvldb/vol14/p1-marcus.pdf"
+    print(getProjectNameAndUrl(paper_url1))
