@@ -4,7 +4,6 @@ from lxml import etree
 import os
 import re
 import requests
-import get_paper_list
 from pdf_extractor import getProjectNameAndUrl
 import asyncio
 print("Begin of vldb crawler")
